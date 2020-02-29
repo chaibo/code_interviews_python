@@ -75,18 +75,18 @@ node_d = ListNode("d")
 node_e = ListNode("e")
 node_f = ListNode("f")
 
-test_list = node_a
+test_list1 = node_a
 node_a.next = node_b
 node_b.next = node_c
 node_c.next = node_d
 node_d.next = node_e
 node_e.next = node_f
 
-print(entry_node_of_loop(test_list))
+print(entry_node_of_loop(test_list1))
 
 node_f.next = node_c
 
-print(entry_node_of_loop(test_list).value)
+print(entry_node_of_loop(test_list1).value)
 
 print(entry_node_of_loop(None))
 
