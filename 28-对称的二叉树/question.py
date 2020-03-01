@@ -3,6 +3,7 @@
 如果一棵二叉树和它的镜像一样，那么它是对称的。
 """
 
+
 class BinaryTreeNode:
 
     def __init__(self, value):
@@ -13,6 +14,7 @@ class BinaryTreeNode:
 
 def is_symmetrical(root):
     return is_symmetrical(root, root)
+
 
 def is_symmetrical(root1, root2):
     if (root1 is None) and (root2 is None):

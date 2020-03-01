@@ -10,8 +10,8 @@ c  f  c  s
 j  d  e  h
 """
 
-def has_path(matrix, rows, cols, string):
 
+def has_path(matrix, rows, cols, string):
     if (matrix is None) or (rows < 1) or (cols < 1) \
             or (string is None):
         return False
@@ -26,12 +26,13 @@ def has_path(matrix, rows, cols, string):
 
     return False
 
+
 def has_path_core(matrix, rows, cols, row, col, string, path_len, visited):
     if path_len == len(string):
         return True
 
     has = False
-    if (0 <= row <rows) and (0 <= col < cols) \
+    if (0 <= row < rows) and (0 <= col < cols) \
             and (matrix[row * cols + col] == string[path_len]) \
             and (not visited[row * cols + col]):
 
@@ -64,5 +65,3 @@ print(has_path(matrix2, 4, 1, "abcd"))
 print(has_path(matrix2, 4, 1, "abcb"))
 
 print(has_path(None, 4, 5, "sdfd"))
-
-
