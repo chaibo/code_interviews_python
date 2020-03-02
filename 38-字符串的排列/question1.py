@@ -16,7 +16,7 @@ def permutation(string):
 def permutation_core(char_list, index):
     length = len(char_list)
 
-    if index == len(char_list):
+    if index == length:
         string = ''.join(char_list)
         print(string)
     else:
