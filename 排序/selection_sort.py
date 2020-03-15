@@ -1,24 +1,29 @@
 """
-选择排序
-时间负责度: O(n*n)
+选择排序：首先，找到数组中最小的那个元素，其次，将它和数组的第一个元素交换位置（如果第一个元素就是
+最小元素，那么它就和自己交换）。再次，在剩下的元素中找到最小的元素，将它与数组的第二个元素交换位置。
+如此往复，直到将整个数组排序。
+时间复杂度: O(n*n)
 """
 
+
 def selection_sort(arr):
-    new_arr = []
-    for i in range(len(arr)):
-        smallest = find_smallest(arr)
-        new_arr.append(arr.pop(smallest))
-    return new_arr
+    if not arr:
+        return
 
-def find_smallest(arr):
-    smallest = arr[0]
-    smallest_index = 0
+    length = len(arr)
 
-    for i in range(1, len(arr)):
-        if arr[i] < smallest:
-            smallest = arr[i]
-            smallest_index = i
+    for i in range(length):
+        min_index = i
+        for j in range(i + 1, length):
+            if arr[j] < arr[min_index]:
+                min_index = j
 
-    return smallest_index
+        temp = arr[i]
+        arr[i] = arr[min_index]
+        arr[min_index] = temp
 
-print(selection_sort([5, 3, 6, 2, 10, 1, 4, 7, 9, 8]))
+
+if __name__ == '__main__':
+    arr = [3, 5, 6, 2, 4, 1, 0, 8, 7, 9]
+    selection_sort(arr)
+    print(arr)
