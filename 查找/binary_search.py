@@ -3,16 +3,17 @@
 时间复杂度: O(logN)
 """
 
-def binary_search(list, item):
-    if list is None:
+
+def binary_search(array, item):
+    if array is None:
         return None
 
     low = 0
-    high = len(list) - 1
+    high = len(array) - 1
 
     while low <= high:
-        mid = (low + high) // 2    #向下取整
-        num = list[mid]
+        mid = (low + high) // 2  # 向下取整
+        num = array[mid]
 
         if num == item:
             return mid
@@ -23,8 +24,12 @@ def binary_search(list, item):
 
     return None
 
-test_list = [1, 3, 5, 6]
 
-print(binary_search(test_list, 5))
-print(binary_search(test_list, -1))
-
+if __name__ == "__main__":
+    l1 = [1, 3, 5, 6, 7, 8]
+    print(binary_search(l1, 0))
+    print(binary_search(l1, 3))
+    print(binary_search(l1, 4))
+    print(binary_search(l1, 9))
+    print(binary_search([], 0))
+    print(binary_search(None, 0))
